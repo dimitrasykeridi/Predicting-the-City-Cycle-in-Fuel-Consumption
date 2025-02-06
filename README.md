@@ -7,7 +7,7 @@ The main file we used is mpg.data.xlsx, which contains information about eight c
 ### Resources
 The dataset is provided under the Creative Commons CC0 1.0 Universal (CC0 1.0) 'Public Domain Dedication' license (https://creativecommons.org/publicdomain/zero/1.0/) , so we are authorized to use it in this project.
 
-### Data Preparation 
+### Data Description
 We were provided with the Auto MPG dataset, which includes the following characteristics:
 
 ![image](https://github.com/user-attachments/assets/9e47cf20-def0-43d5-b60e-475380100b5b)
