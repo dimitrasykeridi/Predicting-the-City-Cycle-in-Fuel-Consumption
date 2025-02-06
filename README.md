@@ -38,10 +38,34 @@ To end the exploratory part of the project we analyzed continuous variables by p
 
 ![image](https://github.com/user-attachments/assets/c628743b-38fe-4bda-8458-7b1c087a1e25)
 
-Following that we continued with showing trends in fuel efficiency and model year over the years 
-
+Following that, we analyzed trends in fuel efficiency and model year over time.
 ![image](https://github.com/user-attachments/assets/87a6c81d-041e-4c1d-94d0-4732a38454dd)
 ![image](https://github.com/user-attachments/assets/345a570d-0345-4191-bc26-8867aebaa0ec)
+
+#### PreProcessing 
+##### For the preprocessing, first step was to drop unwanted columns and check for null values and duplicates. 
+![image](https://github.com/user-attachments/assets/5b2e9cdf-f9ba-4bb8-a143-f72dd88d435e)
+
+![image](https://github.com/user-attachments/assets/c80c450e-847a-44cb-9b91-811537eb6382)
+
+##### After dropping null values for our target variable and replacing nulls in other columns with median, we changed the data type for columns 'displacement' and 'horsepower' as shown below:
+
+![image](https://github.com/user-attachments/assets/7f074e3d-8ce3-4e01-9fdf-8dc84c088d0f)
+
+For feature extraction, we splitted the 'car name' column into brand and model. Made some corrections for the name of the brand and one hoted encoded the final ones into the fifteen largest and others.
+
+![image](https://github.com/user-attachments/assets/ba253599-936a-48cc-916e-e79908824dce)
+
+![image](https://github.com/user-attachments/assets/cb9ec789-2d5e-4a21-a028-6339511420b8)
+
+
+
+
+
+
+
+
+
 
 
 
