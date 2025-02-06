@@ -2,7 +2,7 @@
 ## Background Information
 
 ### Data Files
-The main file we used is mpg.data.xlsx, which contains information about eight car attributes (e.g., MPG, cylinders, horsepower, car name). These help car rental companies decide when to update their fleets by predicting fuel efficiency (MPG).
+The main file we used is mpg.data.xlsx, which contains information about eight car attributes (e.g., MPG, cylinders, horsepower, car name). These helped us provide car rental companies the necessary information  when updating their fleets by predicting fuel efficiency (MPG).
 
 ### Resources
 The dataset is provided under the Creative Commons CC0 1.0 Universal (CC0 1.0) 'Public Domain Dedication' license ( https://creativecommons.org/publicdomain/zero/1.0/ ) , so we are authorized to use it in this project.
@@ -23,6 +23,16 @@ The first step in our analysis was exploring the data. We began by importing the
 ![image](https://github.com/user-attachments/assets/44edf878-c6ed-48af-b91d-74f1c84c5711)
 
 ![image](https://github.com/user-attachments/assets/bfad36f3-0204-42ac-be51-2741745657ae)
+
+After identifying key metrics during the EDA step, we proceeded with adjustments and corrections for erroneous values.
+
+![image](https://github.com/user-attachments/assets/3165264a-36fb-4e0a-a683-128cc1037a3d)
+
+![image](https://github.com/user-attachments/assets/61e359f7-495d-4cad-96fa-098c12d63cfb)
+
+
+
+
 
 
 
