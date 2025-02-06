@@ -16,3 +16,13 @@ Our table contains eight attributes, as shown below:
 
 ![image](https://github.com/user-attachments/assets/792c14c7-0577-4f7d-b6ae-13a2b1d251b4)
 
+### Data Processes
+#### Exploratory Data Analysis
+The first step in our analysis was exploring the data. We began by importing the necessary Python libraries to visualize the data and calculate key metrics for our model. Below you can see some of our frequently used commands for that step.
+
+![image](https://github.com/user-attachments/assets/44edf878-c6ed-48af-b91d-74f1c84c5711)
+
+![image](https://github.com/user-attachments/assets/bfad36f3-0204-42ac-be51-2741745657ae)
+
+
+
