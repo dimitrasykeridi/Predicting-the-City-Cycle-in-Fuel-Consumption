@@ -2,7 +2,7 @@
 ## Background Information
 
 ### Data Files
-The main file we used is mpg.data.xlsx, which contains information about eight car attributes (e.g., MPG, cylinders, horsepower, car name). These helped us provide car rental companies the necessary information  when updating their fleets by predicting fuel efficiency (MPG).
+The primary dataset, mpg.data.xlsx, contains information on eight car attributes, including MPG, cylinders, horsepower, and car name. These data help car rental companies make informed decisions about updating their fleets by predicting fuel efficiency (MPG).
 
 ### Resources
 The dataset is provided under the Creative Commons CC0 1.0 Universal (CC0 1.0) 'Public Domain Dedication' license ( https://creativecommons.org/publicdomain/zero/1.0/ ) , so we are authorized to use it in this project.
@@ -52,15 +52,22 @@ Following that, we analyzed trends in fuel efficiency and model year over time.
 
 ![image](https://github.com/user-attachments/assets/7f074e3d-8ce3-4e01-9fdf-8dc84c088d0f)
 
-For feature extraction, we splitted the 'car name' column into brand and model. Made some corrections for the name of the brand and one hoted encoded the final ones into the fifteen largest and others.
+For feature extraction, we splitted the 'car name' column into brand and model. Made some corrections for the name of the brand and one hoted encoded the final ones into the five largest and others.
 
 ![image](https://github.com/user-attachments/assets/ba253599-936a-48cc-916e-e79908824dce)
 
-![image](https://github.com/user-attachments/assets/cb9ec789-2d5e-4a21-a028-6339511420b8)
+The final step in preprocessing was identifying outliers and determining whether to keep or remove them. Since our dataset was relatively small and the outliers fell within a reasonable range, we decided to retain them.
 
 
+#### Model Training,Test & Evaluation 
 
+The first step in our model training process was to split the data into three classes based on percentiles, allowing us to reframe the problem as a classification task.
 
+The next step was to scale the data. Without scaling, models might assign more importance to certain features solely due to their magnitude.
+
+Furthermore, we continued with splitting our data into training and testing sets. Since our data were imbalanced, we used class weights to address the imbalance. After balancing the dataset, we proceeded to evaluate the model using three popular classification algorithms: Logistic Regression, Decision Tree, and K-Nearest Neighbors (KNN).
+
+Once the data was balanced and the training/testing split was applied, we moved forward with model fine-tuning. To optimize model performance, we employed cross-validation and Grid Search CV techniques. After evaluating the models using cross-validation, we observed that the standard deviation for the model performance was equal to [fill in standard deviation]. This indicates [interpretation of the result].
 
 
 
