@@ -149,7 +149,7 @@ The fuel efficiency classification model provides valuable insights for business
 
 #### Consumer Insights:Companies can use the model to understand consumer preferences for fuel-efficient vehicles. This helps in marketing and targeting eco-conscious customers with the right options, improving customer satisfaction and loyalty. 
 
-#### Data-Driven Strategy:The model provides a data-driven tool for fleet management and long-term planning. By considering fuel efficiency, businesses can adapt to changing market conditions, optimize costs, and stay ahead of industry trends.
+*  Data-Driven Strategy:The model provides a data-driven tool for fleet management and long-term planning. By considering fuel efficiency, businesses can adapt to changing market conditions, optimize costs, and stay ahead of industry trends.
 
 
 ####  The model empowers businesses to make smarter decisions in fleet management, reduce fuel costs, enhance sustainability, and improve customer satisfaction. It provides a competitive edge by optimizing fleet composition and supporting environmentally friendly business practices.
