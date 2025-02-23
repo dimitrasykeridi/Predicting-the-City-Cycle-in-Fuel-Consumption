@@ -59,7 +59,10 @@ For feature extraction, we splitted the 'car name' column into brand and model. 
 Next step on preprocessing was identifying and handling outliers. For identifying outliers for columns 'mpg', 'cylinders', 'displacement', 'horsepower', 'weight' we used the IQR Method as shown below and for column 'acceleration' which follows normal distribution we used Z-Score Method.
 
 ![image](https://github.com/user-attachments/assets/3634aaf0b465-42b9-8ae5-6f95bf8ddf17)
+
+
 ![image](https://github.com/user-attachments/assets/7d012506-8b62-4d7c-95a5-a5565ce26855) 
+
 
 Given that our dataset was relatively small and the outliers fell within a reasonable range, we decided to retain them.
 
