@@ -72,24 +72,25 @@ The final preprocessing step involved splitting the mpg column into three classe
 
 
 ### Model Training, Testing & Evaluation
-To start, we scaled the data to ensure no feature had a disproportionate influence on model performance due to its magnitude.
+* To start, we scaled the data to ensure no feature had a disproportionate influence on model performance due to its magnitude.
 ![image](https://github.com/user-attachments/assets/67849fa9-fac8-43c3-8ef2-28604a3355a0)
 
-Next, we splitted the dataset into training and testing sets. We applied four popular classification algorithms: Logistic Regression, Decision Tree, K-Nearest Neighbors (KNN) and XGBoost evaluating their performance with and without class weights to address the class imbalance.
+* Next, we splitted the dataset into training and testing sets. We applied four popular classification algorithms: Logistic Regression, Decision Tree, K-Nearest Neighbors (KNN) and XGBoost evaluating their performance with and without class weights to address the class imbalance.
 Model Showm: K-Nearest Neighbors (KNN)
 
 ![image](https://github.com/user-attachments/assets/2beb184f-f2a1-446e-a02e-73d0802561d9)
 
-After training and evaluating the models, we found that the K-Nearest Neighbors (KNN) model performed best, based on F1-score and macro average across all classes. It balanced precision and recall effectively, achieving an overall accuracy of 86%. The confusion matrix and weighted averages indicated strong performance in the 0-15 and 30-45 groups, with minor room for improvement in the 15-30 group. The macro average F1-score of 0.88 further supported KNN's effectiveness.
+* After training and evaluating the models, we found that the K-Nearest Neighbors (KNN) model performed best, based on F1-score and macro average across all classes. It balanced precision and recall effectively, achieving an overall accuracy of 86%. The confusion matrix and weighted averages indicated strong performance in the 0-15 and 30-45 groups, with minor room for improvement in the 15-30 group. The macro average F1-score of 0.88 further supported KNN's effectiveness.
 
 ### Model Fine-Tuning
 
 To further optimize the KNN model, we employed cross-validation and GridSearchCV techniques.
 
 ##### Cross-Validation Results:
-Mean Accuracy: 0.7587
-Standard Deviation: 0.07345
-The mean accuracy of 0.7587 indicated that the KNN model was performing reasonably well, but there was room for improvement. The standard deviation of 0.07345 showed moderate variability across folds, suggesting that performance could be more stable with optimized hyperparameters.
+* Mean Accuracy: 0.7587
+  Standard Deviation: 0.07345
+  The mean accuracy of 0.7587 indicated that the KNN model was performing reasonably well, but there was room for improvement. The standard deviation of 0.07345 showed moderate variability across folds, 
+  suggesting that performance could be more stable with optimized hyperparameters.
 
 ![image](https://github.com/user-attachments/assets/ee28c915-b44e-4830-88d4-d918e0317798)
 
@@ -102,7 +103,7 @@ After applying GridSearchCV, we tuned the hyperparameters to enhance the model's
 ![image](https://github.com/user-attachments/assets/27f02616-0abf-4ff0-8e66-deef5de36a01)
 
 
-##### Comparison of Results
+#### Comparison of Results
 
 ##### Before Hyperparameter Tuning:
 * The KNN model performed well with a high recall for class 1 (1.00) and good precision and F1-score for all classes.
