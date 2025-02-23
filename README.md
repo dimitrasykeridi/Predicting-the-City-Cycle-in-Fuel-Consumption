@@ -94,7 +94,7 @@ To further optimize the KNN model, we employed cross-validation and GridSearchCV
 
 ![image](https://github.com/user-attachments/assets/ee28c915-b44e-4830-88d4-d918e0317798)
 
-### For optimizing further the hyperparameters
+#### For optimizing further the hyperparameters
 
 #### GridSearchCV Results:
 
