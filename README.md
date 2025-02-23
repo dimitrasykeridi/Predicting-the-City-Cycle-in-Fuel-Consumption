@@ -56,35 +56,56 @@ For feature extraction, we splitted the 'car name' column into brand and model. 
 
 ![image](https://github.com/user-attachments/assets/ba253599-936a-48cc-916e-e79908824dce)
 
-in preprocessing was identifying and handling outliers. Given that our dataset was relatively small and the outliers fell within a reasonable range, we decided to retain them.
+Next step on preprocessing was identifying and handling outliers. For identifying outliers for columns 'mpg', 'cylinders', 'displacement', 'horsepower', 'weight' we used the IQR Method as shown below and for column 'acceleration' which follows normal distribution we used Z-Score Method.
+![image](https://github.com/user-attachments/assets/3634aaf0b465-42b9-8ae5-6f95bf8ddf17)
+![image](https://github.com/user-attachments/assets/7d012506-8b62-4d7c-95a5-a5565ce26855) 
 
-The final preprocessing step involved splitting the data into three classes based on percentiles. This allowed us to reframe the problem as a classification task, making it suitable for further model training and evaluation.
+Given that our dataset was relatively small and the outliers fell within a reasonable range, we decided to retain them.
 
-Model Training, Testing & Evaluation
+The final preprocessing step involved splitting the mpg column into three classes based on percentiles. This allowed us to reframe the problem as a classification task, making it suitable for model training and evaluation. By doing this, we created a new efficiency column that classifies fuel efficiency into three categories: low (3), medium (2), and high (1) based on the mpg values.
+
+![image](https://github.com/user-attachments/assets/83e3d484-f47e-40e5-94c3-6a179d6fd912)
+
+
+### Model Training, Testing & Evaluation
 To start, we scaled the data to ensure no feature had a disproportionate influence on model performance due to its magnitude.
+![image](https://github.com/user-attachments/assets/67849fa9-fac8-43c3-8ef2-28604a3355a0)
 
-Next, we split the dataset into training and testing sets. We applied three popular classification algorithms: Logistic Regression, Decision Tree, and K-Nearest Neighbors (KNN), evaluating their performance with and without class weights to address the class imbalance.
+Next, we splitted the dataset into training and testing sets. We applied four popular classification algorithms: Logistic Regression, Decision Tree, K-Nearest Neighbors (KNN) and XGBoost evaluating their performance with and without class weights to address the class imbalance.
+Model Showm: K-Nearest Neighbors (KNN)
+
+![image](https://github.com/user-attachments/assets/2beb184f-f2a1-446e-a02e-73d0802561d9)
 
 After training and evaluating the models, we found that the K-Nearest Neighbors (KNN) model performed best, based on F1-score and macro average across all classes. It balanced precision and recall effectively, achieving an overall accuracy of 86%. The confusion matrix and weighted averages indicated strong performance in the 0-15 and 30-45 groups, with minor room for improvement in the 15-30 group. The macro average F1-score of 0.88 further supported KNN's effectiveness.
 
-Model Fine-Tuning
+### Model Fine-Tuning
+
 To further optimize the KNN model, we employed cross-validation and GridSearchCV techniques.
 
-Cross-Validation Results:
-
+##### Cross-Validation Results:
 Mean Accuracy: 0.7587
 Standard Deviation: 0.07345
 The mean accuracy of 0.7587 indicated that the KNN model was performing reasonably well, but there was room for improvement. The standard deviation of 0.07345 showed moderate variability across folds, suggesting that performance could be more stable with optimized hyperparameters.
 
-GridSearchCV Results:
+![image](https://github.com/user-attachments/assets/ee28c915-b44e-4830-88d4-d918e0317798)
+
+### For optimizing further the hyperparameters
+
+#### GridSearchCV Results:
 
 After applying GridSearchCV, we tuned the hyperparameters to enhance the model's performance.
-Comparison of Results
-Before Hyperparameter Tuning:
+
+![image](https://github.com/user-attachments/assets/27f02616-0abf-4ff0-8e66-deef5de36a01)
+
+
+##### Comparison of Results
+
+##### Before Hyperparameter Tuning:
 The KNN model performed well with a high recall for class 1 (1.00) and good precision and F1-score for all classes.
 Overall accuracy: 86%
 Macro avg F1-score: 0.88
-After Hyperparameter Tuning (with GridSearchCV):
+
+##### After Hyperparameter Tuning (with GridSearchCV):
 GridSearchCV improved the recall for class 3 (0.94).
 However, accuracy decreased slightly to 82%, and the macro F1-score dropped to 0.81.
 The model became more balanced, with better performance in terms of recall but a trade-off in overall accuracy and class 1 performance (recall dropped to 0.88).
