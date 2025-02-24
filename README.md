@@ -76,7 +76,7 @@ The final preprocessing step involved splitting the mpg column into three classe
 ![image](https://github.com/user-attachments/assets/67849fa9-fac8-43c3-8ef2-28604a3355a0)
 
 * Next, we splitted the dataset into training and testing sets. We applied four popular classification algorithms: Logistic Regression, Decision Tree, K-Nearest Neighbors (KNN) and XGBoost evaluating their performance with and without class weights to address the class imbalance.
-Model Showm: K-Nearest Neighbors (KNN)
+Model Shown: K-Nearest Neighbors (KNN)
 
 ![image](https://github.com/user-attachments/assets/2beb184f-f2a1-446e-a02e-73d0802561d9)
 
