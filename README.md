@@ -75,23 +75,25 @@ The final preprocessing step involved splitting the mpg column into three classe
 ![image](https://github.com/user-attachments/assets/67849fa9-fac8-43c3-8ef2-28604a3355a0)
 
 * Next, we splitted the dataset into training and testing sets. We applied four popular classification algorithms: Logistic Regression, Decision Tree, K-Nearest Neighbors (KNN) and XGBoost evaluating their performance with and without class weights to address the class imbalance.
-Model Shown: K-Nearest Neighbors (KNN)
+Model Shown: Logistic Regression without class weights
 
-![image](https://github.com/user-attachments/assets/2beb184f-f2a1-446e-a02e-73d0802561d9)
+![image](https://github.com/user-attachments/assets/c813211d-a01a-4341-b78c-74c7f234d3ac)
 
-* After training and evaluating the models, we found that the K-Nearest Neighbors (KNN) model performed best, based on F1-score and macro average across all classes. It balanced precision and recall effectively, achieving an overall accuracy of 86%. The confusion matrix and weighted averages indicated strong performance in the 0-15 and 30-45 groups, with minor room for improvement in the 15-30 group. The macro average F1-score of 0.88 further supported KNN's effectiveness.
+
+* After training and evaluating the models, we found that the Logistic Regression performed best, based on F1-score and macro average across all classes. It balanced precision and recall effectively, achieving an overall accuracy of 93%. Class 3 (High Efficiency) has perfect recall (1.00), meaning no instances were missed and class 1 (Low Efficiency) has the lowest recall (0.75), indicating that some instances were misclassified. The model performs well overall, but class imbalance may affect the recall of the minority class.
 
 ### Model Fine-Tuning
 
 To further optimize the KNN model, we employed cross-validation and GridSearchCV techniques.
 
 ##### Cross-Validation Results:
-* Mean Accuracy: 0.7587
-  Standard Deviation: 0.07345
-  The mean accuracy of 0.7587 indicated that the KNN model was performing reasonably well, but there was room for improvement. The standard deviation of 0.07345 showed moderate variability across folds, 
-  suggesting that performance could be more stable with optimized hyperparameters.
+* Mean Accuracy: 0.8175
+  Standard Deviation: 0.0381
 
-![image](https://github.com/user-attachments/assets/ee28c915-b44e-4830-88d4-d918e0317798)
+The mean accuracy of 0.8175 indicated that the Logistic Regression model was performing reasonably well, but there was room for improvement. The standard deviation of 0.0381 showed that the model is consistent and reliable across different data subsets.
+ 
+![image](https://github.com/user-attachments/assets/4dce0f61-fe3e-474a-aaf7-d64a892ba51e)
+
 
 #### For optimizing further the hyperparameters
 
@@ -99,20 +101,19 @@ To further optimize the KNN model, we employed cross-validation and GridSearchCV
 
 After applying GridSearchCV, we tuned the hyperparameters to enhance the model's performance.
 
-![image](https://github.com/user-attachments/assets/27f02616-0abf-4ff0-8e66-deef5de36a01)
-
+![image](https://github.com/user-attachments/assets/7629a65f-407a-434c-84f9-7ea7921fcb32)
 
 #### Comparison of Results
 
 ##### Before Hyperparameter Tuning:
-* The KNN model performed well with a high recall for class 1 (1.00) and good precision and F1-score for all classes.
-  Overall accuracy: 86%
-  Macro avg F1-score: 0.88
+* The Logistic Regression model performed well with a high recall for class 3 (1.00) and good precision and F1-score for all classes.
+  Overall accuracy: 93%
+  Macro avg F1-score: 0.89
 
 ##### After Hyperparameter Tuning (with GridSearchCV):
 * GridSearchCV improved the recall for class 3 (0.94).
-  However, accuracy decreased slightly to 82%, and the macro F1-score dropped to 0.81.
-  The model became more balanced, with better performance in terms of recall but a trade-off in overall accuracy and class 1 performance (recall dropped to 0.88).
+  However, accuracy decreased slightly to 85%, and the macro F1-score dropped to 0.81.
+  The model became more balanced, with better performance in terms of recall but a trade-off in overall accuracy and class 1 performance (recall dropped to 0.38).
   This process highlights how GridSearchCV optimization can fine-tune a model, leading to a more balanced result but with some trade-offs in performance.
 
 #### Summary of the project
@@ -123,19 +124,17 @@ The result of this project is a classification model that categorizes cars based
 
 #### Model Performance:
 
-Accuracy: The model achieved an overall accuracy of 82%, which indicates that the model's predictions are generally reliable.
-Class-specific Performance:
-High Efficiency (Class 1): The model performs well in identifying high-efficiency cars but can still improve in terms of precision, as some high-efficiency cars are misclassified.
-Medium Efficiency (Class 2): While the model is fairly good at identifying medium-efficiency cars, it misclassifies a significant portion (28%), suggesting room for improvement in distinguishing these cars.
-Low Efficiency (Class 3): The model shows strong performance with low-efficiency cars, achieving good precision and recall, with minimal misclassifications.
+Accuracy: The model achieved an overall accuracy of 93%, which indicates that the model's predictions are generally reliable.
+*  Low-efficiency cars (Class 3) are perfectly captured.
+*  High-efficiency cars (Class 1) need better recall (reduce misclassification).
+*  Medium-efficiency cars (Class 2) still have a 10% misclassification rate.
 
 #### Model Evaluation:
 
-* Precision and Recall: The model strikes a balance between precision and recall across classes, but the performance can be improved in the medium-efficiency category, where recall (72%) is lower.
-  F1-Score: The F1-scores for each class suggest that the model maintains a reasonable balance between precision and recall, but it could still be refined to better capture high and medium-efficiency cars.
-
-* While the model demonstrates solid performance, particularly for low-efficiency cars, there is room for improvement in identifying high and medium-efficiency cars. With further refinement and optimization, 
-  particularly in the classification of medium-efficiency vehicles, the model can be a highly effective tool for making data-driven decisions about car fleet management based on fuel efficiency.
+* Strong Overall Accuracy and Stability: The model performs consistently across different training and validation splits.
+* High Precision Across All Classes: Predictions are generally reliable, with minimal false positives.
+* Low Recall for Class 1 (High Efficiency): A recall of 0.75 suggests that the model struggles to correctly identify all high-efficiency cars.
+* Misclassification in Class 2 (Medium Efficiency): While well-classified overall, some medium-efficiency cars are misidentified as high or low efficiency.
 
 #### Practical Application:
 
