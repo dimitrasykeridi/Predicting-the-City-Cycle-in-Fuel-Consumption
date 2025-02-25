@@ -86,7 +86,7 @@ Model Shown: Logistic Regression without class weights
 
 ### Model Fine-Tuning
 
-To further optimize the KNN model, we employed cross-validation and GridSearchCV techniques.
+To further optimize the Logistic Regression model, we employed cross-validation and GridSearchCV techniques.
 
 ##### Cross-Validation Results:
 * Mean Accuracy: 0.8175
