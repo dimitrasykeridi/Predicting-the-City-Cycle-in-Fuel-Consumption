@@ -72,7 +72,9 @@ The final preprocessing step involved splitting the mpg column into three classe
 
 ### Model Training, Testing & Evaluation
 * To start, we scaled the data to ensure no feature had a disproportionate influence on model performance due to its magnitude.
+  
 ![image](https://github.com/user-attachments/assets/67849fa9-fac8-43c3-8ef2-28604a3355a0)
+
 
 * Next, we splitted the dataset into training and testing sets. We applied four popular classification algorithms: Logistic Regression, Decision Tree, K-Nearest Neighbors (KNN) and XGBoost evaluating their performance with and without class weights to address the class imbalance.
 Model Shown: Logistic Regression without class weights
