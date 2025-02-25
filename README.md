@@ -77,12 +77,21 @@ The final preprocessing step involved splitting the mpg column into three classe
 
 
 * Next, we splitted the dataset into training and testing sets. We applied four popular classification algorithms: Logistic Regression, Decision Tree, K-Nearest Neighbors (KNN) and XGBoost evaluating their performance with and without class weights to address the class imbalance.
+  
 Model Shown: Logistic Regression without class weights
 
 ![image](https://github.com/user-attachments/assets/c813211d-a01a-4341-b78c-74c7f234d3ac)
 
+Model Shown: XGBoost without class weights
 
-* After training and evaluating the models, we found that the Logistic Regression performed best, based on F1-score and macro average across all classes. It balanced precision and recall effectively, achieving an overall accuracy of 93%. Class 3 (High Efficiency) has perfect recall (1.00), meaning no instances were missed and class 1 (Low Efficiency) has the lowest recall (0.75), indicating that some instances were misclassified. The model performs well overall, but class imbalance may affect the recall of the minority class.
+![image](https://github.com/user-attachments/assets/60e5d906-5152-4b13-aaf2-99025ba880e5)
+
+
+* After training and evaluating the models, we found that the Logistic Regression and XGBoost performed best, based on F1-score and macro average across all classes.
+  
+* XGBoost model achieved an accuracy of 88.75%, performing well overall. It predicts high fuel efficiency (class 3) perfectly with a recall of 100%, meaning all actual class 3 cars were correctly classified. However, it struggles with low fuel efficiency (class 1), achieving only 62% recall, which means many low-efficiency cars were misclassified. The model performs best on medium and high-efficiency cars, with precision above 87%. To improve class 1 recall, we might consider adjusting class weights.
+  
+* Logistic Regression without class weights balanced precision and recall effectively, achieving an overall accuracy of 93%. Class 3 (High Efficiency) has perfect recall (1.00), meaning no instances were missed and class 1 (Low Efficiency) has the lowest recall (0.75), indicating that some instances were misclassified. The model performs well overall, but class imbalance may affect the recall of the minority class.
 
 ### Model Fine-Tuning
 
@@ -124,19 +133,19 @@ The result of this project is a classification model that categorizes cars based
 
 ### Key Outcomes
 
-#### Model Performance:
-
+#### Model Performance: 
+##### Logistic regression without class weights
 Accuracy: The model achieved an overall accuracy of 93%, which indicates that the model's predictions are generally reliable.
 *  Low-efficiency cars (Class 3) are perfectly captured.
 *  High-efficiency cars (Class 1) need better recall (reduce misclassification).
 *  Medium-efficiency cars (Class 2) still have a 10% misclassification rate.
 
-#### Model Evaluation:
-
-* Strong Overall Accuracy and Stability: The model performs consistently across different training and validation splits.
-* High Precision Across All Classes: Predictions are generally reliable, with minimal false positives.
-* Low Recall for Class 1 (High Efficiency): A recall of 0.75 suggests that the model struggles to correctly identify all high-efficiency cars.
-* Misclassification in Class 2 (Medium Efficiency): While well-classified overall, some medium-efficiency cars are misidentified as high or low efficiency.
+#### Model Performance:
+##### XGBoost without class weights
+Accuracy: The model achieved an overall accuracy of 88.75%, indicating strong performance.
+* High-efficiency cars (Class 3) are perfectly captured with 100% recall.
+* Low-efficiency cars (Class 1) need better recall, as 38% were misclassified.
+* Medium-efficiency cars (Class 2) perform well but still have a 15% misclassification rate.
 
 #### Practical Application:
 
